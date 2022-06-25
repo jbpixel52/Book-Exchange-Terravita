@@ -40,10 +40,10 @@ The choice of React comes with the SPA nature of this type of application design
 The use of PostgreSQL was chosen to efficiently combine our highly relational data with the combination of users that we required for the application. The relational nature of a SQL database allowed an overarching top down view of the data we were moving from the backend to the frontend, and allowed concise data movement as we were developing the application. 
 
 ### Bcrypt
-Bcrypt was an idea choice to encrypt the passwords for our users, as we felt its unique salt hashing system would add increased security, and also an easy framework for hashing passwords exponentially more if warranted. 
+Bcrypt was an ideal choice to encrypt the passwords for our users, as we felt its unique salt hashing system would add increased security, and also an easy framework for hashing passwords exponentially more if warranted. 
 
 ### Node / Express
-Node and express was chosen to keep “language consistency" between front and back end. It is a cross-platform runtime environment built on V8, high-performance open-source JavaScript engine, ensures excellent performance in an event-driven, non-blocking I/O paradigm.
+Node and Express was chosen to keep “language consistency" between front and back end. It is a cross-platform runtime environment built on V8, high-performance open-source JavaScript engine, ensures excellent performance in an event-driven, non-blocking I/O paradigm.
 
 ## Getting Started
 ### Close this repository
@@ -66,12 +66,6 @@ npm run dev
 npm start
 ```
 
-### Data-Flow
-<p align="center">
-<img src="./images/data-flow.png" />
-</p>
-
-
 ## <b>Authors</b>
 
 - **David Kim** - [@codejunkie7](https://github.com/codejunkie7)
@@ -82,5 +76,6 @@ npm start
 - **Li Cheng** - [@delacour124](https://github.com/delacour124)
 - **Max Cook** - [@maxwellcook](https://github.com/maxwellcook)
 - **Clay Sawyer** - [@claysawyer](https://github.com/claysawyer)
+- **Bianca Picasso** - [@BiancaPicasso](https://github.com/BiancaPicasso)
 
 
