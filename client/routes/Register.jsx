@@ -1,4 +1,5 @@
 const React = require('react');
+import { Navigate } from "react-router-dom";
 
 class Register extends React.Component {
 
@@ -18,16 +19,18 @@ class Register extends React.Component {
         phone: document.getElementById('phone').value,
         address: document.getElementById('address').value,
       })
-    })
-      .then(response => response.json())
+    }).then(response => response.json())
       .then(data => {
-        console.log(data)
+        return this.props.changeState(data)
       });
   }
 
   render() {
+    let { loggedIn, error } = this.props;
     return (
       <div className="usercred-box">
+        {loggedIn && <Navigate to="/" replace={true} />}
+        {error && <p style={{ color: 'red' }}>{error}</p>}
         <div className="usercred-title">Book Exchange</div>
         <form className="usercred-form">
           <input type="text" placeholder="username" name="username" id="username" required />

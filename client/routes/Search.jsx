@@ -5,7 +5,7 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      oldbooks: [],
+      availiableBooks: [],
     }
     this.searchBook = this.searchBook.bind(this);
   }
@@ -21,13 +21,13 @@ class Search extends React.Component {
       body: JSON.stringify({ searchString: document.getElementById('searchString').value })
     })
       .then(response => response.json())
-      .then(data => this.setState({ oldbooks: data }));
+      .then(data => this.setState({ availiableBooks: data }));
   }
 
   render() {
     let table;
     const rows = [];
-    if (this.state.oldbooks.length > 0) {
+    if (this.state.availiableBooks.length > 0) {
       rows.push(
         <tr>
           <th key={0}>Title</th>
@@ -37,11 +37,12 @@ class Search extends React.Component {
           <th key={4}>Owner</th>
           <th key={5}></th>
         </tr>)
-      for (let i = 0; i < this.state.oldbooks.length; i++) {
-        if (this.state.oldbooks[i].username !== 'max') {
+      for (let i = 0; i < this.state.availiableBooks.length; i++) {
+        if (this.state.availiableBooks[i].username !== 'max') {
           rows.push(<SearchBookRow
-            {...this.state.oldbooks[i]}
+            {...this.state.availiableBooks[i]}
             key={i}
+            userId = {this.props.userId}
           />)
         }
       }

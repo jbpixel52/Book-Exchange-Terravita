@@ -11,7 +11,7 @@ module.exports = {
     filename: 'bundle.js',
     //path where we put the file above into
     //created everytime npm run build 
-    path: path.resolve(__dirname, './public/build'),
+    path: path.resolve(__dirname, './build'),
   },
   module: {
     rules: [
@@ -26,8 +26,8 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        test: /.(css|scss)$/,
+        use: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader'],
       },
       {
         test: /\.(png|jp(e*)g|svg|gif)$/,
@@ -45,14 +45,15 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   devServer: {
-    static: {
-      publicPath: '/public',
-      directory: path.join(__dirname, './public'),
-    },
-    port: 8080,
+    hot: true,
     proxy: {
       '*': { target: 'http://localhost:3000' },
       '/api': { target: 'http://localhost:3000' },
     }
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+    })
+  ]
 };

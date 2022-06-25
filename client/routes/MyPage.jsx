@@ -14,7 +14,7 @@ class MyPage extends React.Component {
   }
 
   getMyOldBooks = () => {
-    fetch('/api/getMyOldBookList', {
+    fetch(`/api/getMyOldBookList/${this.props.userId}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -35,7 +35,11 @@ class MyPage extends React.Component {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
-      body: JSON.stringify({ isbn: document.getElementById('isbn').value, condition: document.getElementById('condition').value })
+      body: JSON.stringify({ 
+        isbn: document.getElementById('isbn').value, 
+        condition: document.getElementById('condition').value, 
+        userId: this.props.userId 
+      })
     })
       .then(response => response.json())
       .then((data) => {

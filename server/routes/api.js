@@ -6,7 +6,7 @@ const apiController = require('../controllers/apiController');
 const userController = require('../controllers/userController');
 //const db = require('../models/booksModels');
 
-
+// Route is not being used in app
 router.get('/findBook', apiController.findBook, apiController.findAuthor, (req, res) => {
   return res.status(200).json(res.locals.bookInDB);
 });
@@ -20,23 +20,43 @@ router.post('/findOldBook', dbController.findOldBook, (req, res) => {
   return res.status(200).json(res.locals.oldbooks);
 });
 
+// To request a book from Find Books page
+router.post('/requestBook', dbController.requestBook, (req, res) => {
+  return res.status(200).json(res.locals.requestBooks)
+});
+
+//Interactions for Exchange Page
+
+//route to get incoming requests for exchange page
+router.get('/getIncomingInfo/:userId', dbController.getMyBookRequests, (req, res) => {
+  return res.status(200).json(res.locals.incomingRequests)
+})
+router.get('/getOutgoingInfo/:userId', dbController.getOutgoingRequests, (req, res) => {
+  return res.status(200).json(res.locals.outgoingRequests)
+})
+
+router.post('/shipped', dbController.shipBook, (req, res) => {
+  return res.status(200).json(res.locals.shipped)
+})
+////////////////////////////////
+
 
 //interactions in MyPage
 router.post('/deleteOldBook', dbController.deleteOldBook, (req, res) => {
-  return res.status(200).send(req.body.myOldBookId);
+  return res.status(200).json(req.body.myOldBookId);
 });
 
-router.get('/getMyOldBookList', dbController.findMyBookList, (req, res) => {
+router.get('/getMyOldBookList/:userId', dbController.findMyBookList, (req, res) => {
   return res.status(200).json(res.locals.mybooks);
 });
 
 //interactions in Register
 router.post('/register', userController.createUser, (req, res) => {
-  return res.status(200).json(res.locals.user);
+  return res.status(200).json(res.locals);
 });
 
-router.get('/verifyUser', userController.verifyUser, (req, res) => {
-  return res.status(200).json(res.locals.user);
+router.post('/verifyUser', userController.verifyUser, (req, res) => {
+  return res.status(200).json(res.locals);
 });
 
 ///temp stuff

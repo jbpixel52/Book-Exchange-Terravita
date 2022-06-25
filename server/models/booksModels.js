@@ -1,7 +1,7 @@
 const { Pool } = require('pg');
 
 // add elephant SQL url here. Queries to create tables are below :) 
-const PG_URI = '';
+const PG_URI = 'postgres://lqksgrmm:s11cLWh9kbkjbzvkZ_BL7GD3P1ua50lO@kashin.db.elephantsql.com/lqksgrmm';
 
 // create a new pool here using the connection string above
 const pool = new Pool({
@@ -31,7 +31,7 @@ module.exports = {
 //   genre VARCHAR(50)
 //   );
 
-// CREATE TABLE old_books (
+// CREATE TABLE users_books (
 //   old_book_id SERIAL PRIMARY KEY,
 //   user_id int references users(user_id),
 //   bookisbn VARCHAR(30) references books(isbn),

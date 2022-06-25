@@ -4,11 +4,12 @@
 import React from 'react';
 import { render } from 'react-dom';
 import App from './App.jsx';
+import './stylesheets/styles.scss'
 
 //our entry point  which allows us to include all the react components
 //building block for the bundle
 //contains all react components
 render(
   <App />,
-  document.getElementById('root'),
+  document.getElementById('root')
 );
