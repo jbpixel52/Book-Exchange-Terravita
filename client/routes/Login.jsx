@@ -30,10 +30,10 @@ class Login extends React.Component {
       <div className="usercred-box">
         {loggedIn && <Navigate to="/" replace={true} />}
         {error && <p style={{ color: 'red' }}>{error}</p>}
-        <div className="usercred-title">Book Exchange</div>
+        <div className="usercred-title">Terravita</div>
         <form className="usercred-form">
-          <input type="text" placeholder="enter username" name="username" id="username" required />
-          <input type="password" placeholder="enter password" name="password" id="password" required />
+          <input type="text" placeholder="Ingresa usuario" name="username" id="username" required />
+          <input type="password" placeholder="Ingresa contraseña" name="password" id="password" required />
           <input type="submit" value="Log in" onClick={this.login}/>
         </form>
       </div>

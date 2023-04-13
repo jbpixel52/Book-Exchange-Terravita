@@ -58,10 +58,10 @@ class MyPage extends React.Component {
     if (this.state.myoldbooks.length > 0) {
       rows.push(
         <tr>
-          <th key={0}>Title</th>
-          <th key={1}>Author</th>
+          <th key={0}>Titulo</th>
+          <th key={1}>Autor</th>
           <th key={2}>ISBN</th>
-          <th key={3}>Condition</th>
+          <th key={3}>Condición</th>
           <th key={4}></th>
         </tr>)
       for (let i = 0; i < this.state.myoldbooks.length; i++) {
@@ -76,7 +76,7 @@ class MyPage extends React.Component {
     return (
       <div className="search-box">
         <form className="search-form">
-          <input type="text" placeholder="Add book by isbn" name="isbn" id="isbn" required />
+          <input type="text" placeholder="Agregar libro por ISBN" name="isbn" id="isbn" required />
           <select id="condition" name="condition">
             <option value="Like New">Like New</option>
             <option value="Fine">Fine</option>
