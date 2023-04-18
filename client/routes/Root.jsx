@@ -11,7 +11,7 @@ class Root extends React.Component {
           </svg>
         </div>
         <div className="drawing-description">
-          Trade and discover books from all over the world, <br />through Book Exchange!
+          Descubre e intercambia libros, <br />a través de Terravita!
         </div>
         <div className="blob">
           <svg xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 350">

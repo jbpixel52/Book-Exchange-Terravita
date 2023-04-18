@@ -111,15 +111,15 @@ class Exchange extends React.Component {
         return (
             <div className='exchange'>
                   {/* Incoming Request Table  */}
-                  <h3 className='incoming'>Incoming Requests</h3>
+                  <h3 className='incoming'>Solicitudes Entrantes</h3>
                   {/* {this.state.incomingRequests.length > 0 && ( */}
                       <table class="table table-bordered">
                       <thead>
                           <tr>
-                          <th scope="col">Book Requested</th>
-                          <th scope="col">User</th>
-                          <th scope="col">Email</th>
-                          <th scope="col">Mark As Shipped</th>
+                          <th scope="col">Libro pedido</th>
+                          <th scope="col">Usuario</th>
+                          <th scope="col">Correo</th>
+                          <th scope="col">Marcado como entregado</th>
                           </tr>
                       </thead>
                       <tbody>
@@ -128,22 +128,22 @@ class Exchange extends React.Component {
                               <th scope="row">{req.title}</th>
                               <td>{req.username}</td>
                               <td>{req.email}</td>
-                              <td><button id={i} onClick={this.shipped}>Mark as Shipped</button></td>
+                              <td><button id={i} onClick={this.shipped}>Marcado como entregado</button></td>
                           </tr>)
                           })}
                       </tbody>
                       </table>
                   {/* )} */}
                   {/* Outgoing Request Table  */}
-                  <h3 className='incoming'>Outgoing Requests</h3>
+                  <h3 className='incoming'>Solicitudes Salientes</h3>
                   {this.state.outgoingRequests.length > 0 && (
                       <table class="table table-bordered">
                       <thead>
                           <tr>
-                          <th scope="col">Book Requested</th>
-                          <th scope="col">User</th>
-                          <th scope="col">Email</th>
-                          <th scope="col">Shipping Status</th>
+                          <th scope="col">Libro Solicitado</th>
+                          <th scope="col">Usuario</th>
+                          <th scope="col">Correo</th>
+                          <th scope="col">Estado de entrega</th>
                           </tr>
                       </thead>
                       <tbody>

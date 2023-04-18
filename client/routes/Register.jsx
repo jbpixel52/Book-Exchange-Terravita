@@ -31,14 +31,14 @@ class Register extends React.Component {
       <div className="usercred-box">
         {loggedIn && <Navigate to="/" replace={true} />}
         {error && <p style={{ color: 'red' }}>{error}</p>}
-        <div className="usercred-title">Book Exchange</div>
+        <div className="usercred-title">Terravita</div>
         <form className="usercred-form">
-          <input type="text" placeholder="username" name="username" id="username" required />
-          <input type="password" placeholder="password" name="password" id="password" required />
-          <input type="password" placeholder="confirm password" name="passwordconfirm" id="passwordconfirm" required />
-          <input type="email" placeholder="email" name="email" id="email" required />
-          <input type="phone" placeholder="phone number" name="phone" id="phone" required />
-          <input type="text" placeholder="zipcode" name="address" id="address" required />
+          <input type="text" placeholder="Nombre de usuario" name="username" id="username" required />
+          <input type="password" placeholder="Contraseña" name="password" id="password" required />
+          <input type="password" placeholder="Confirmar contraseña" name="passwordconfirm" id="passwordconfirm" required />
+          <input type="email" placeholder="Correo" name="email" id="email" required />
+          <input type="phone" placeholder="Número de teléfono" name="phone" id="phone" required />
+          <input type="text" placeholder="Código postal" name="address" id="address" required />
           <input type="submit" value="Register" onClick={this.register} />
         </form>
       </div>

@@ -50,7 +50,7 @@ class App extends React.Component {
     return (
       <div>
         <div className="header-container">
-          <h1><a href="">The Book Exchange</a></h1>
+          <h1><a href="">Terravita</a></h1>
           <hr className="bottom-hr" />
         </div>
         <Router>
